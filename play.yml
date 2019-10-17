@@ -6,7 +6,7 @@
   tasks:
     - name: Installing package nginx
       apt: pkg=nginx state=installed update_cache=true
-    # - name: Instaling Wget
+    - name: Instaling Wget
       apt: name={{ package2 }} state=installed update_cache=true
-      # become: true
+      become: true
     # - name:
