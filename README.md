@@ -1,3 +1,3 @@
 # Playbooks
 
-Practice of Ansible PLaybooks
+Practice of Ansible Playbooks
