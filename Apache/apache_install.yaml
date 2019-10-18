@@ -2,7 +2,14 @@
 - hosts: web_portal
   tasks:
     - name: Apt get update
-      apt: name=apache2 update_cache=no
+      apt: update_cache=yes
+
+    - name: Apt get update
+      apt: name={{ item }} update_cache=no
+      with_items:
+        - apache2
+        - nginx
+        - tmux
 
     - name: Copy data files
       copy: src=index.html dest=/var/www/html/
@@ -15,6 +22,13 @@
       notify: 
         - start apache
 
+    - name: Check Uptime
+      shell: uptime
+      register: uptime_var
+
+    - name: Print Uptime
+      debug: var=uptime_var
+ 
 handlers:
   - name: Start apache
     service: name=apache2 state=restarted
