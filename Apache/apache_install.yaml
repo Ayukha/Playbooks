@@ -6,3 +6,6 @@
 
     - name: Copy data files
       copy: src=index.html dest=/var/www/html/
+
+    - name: Stop the service
+      service: name=apache2 state=stopped
