@@ -9,3 +9,13 @@
 
     - name: Stop the service
       service: name=apache2 state=stopped
+
+    - name: Copy template files
+      template: src=current.html.j2 dest=/var/www/html/current.html
+      notify: 
+        - start apache
+
+handlers:
+  - name: Start apache
+    service: name=apache2 state=restarted
+    
