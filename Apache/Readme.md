@@ -1,4 +1,4 @@
-This file shows installation and configuration of Apache webserver using Ansible
+This file shows installation and configuration of Apache webserver using Ansible:
 
 
 To run:
