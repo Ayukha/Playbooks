@@ -1,1 +1,2 @@
-Ansible role for Wordpress deployment
+Ansible role for Wordpress deployment:
+
